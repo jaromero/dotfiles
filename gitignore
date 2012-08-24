@@ -1,0 +1,27 @@
+# Stupid OS Thumbnails wtf I mean come on
+.DS_Store
+Thumbs.db
+
+# OS X likes to crap this thing out into every zip file
+__MACOSX
+
+# Vim temporary files
+*.swp
+*.swo
+*~
+
+# Other temporary files
+*.bak
+
+# Sublime Text related files
+*.sublime-project
+*.sublime-workspace
+
+# Build tool related
+*.sass-cache
+
+# Other CVS directories
+.bzr
+.svn
+.CVS
+.hg

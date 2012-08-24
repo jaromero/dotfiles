@@ -1,0 +1,18 @@
+[user]
+	name = Antonio Romero
+	email = nsdragon@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+[submodule "*"]
+	ignore = untracked
+[core]
+	excludesfile = ~/.gitignore
