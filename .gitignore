@@ -1,0 +1,5 @@
+# Ignore vim stuff, symlinking from elsewhere
+/vim
+/vimrc
+/gvimrc
+
