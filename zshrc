@@ -41,7 +41,10 @@ then
     export TERM='xterm-256color'
 fi
 
-PATH=$HOME/.local/bin:$HOME/bin:/opt/vagrant/bin:$PATH
+PATH=$HOME/.local/bin:$HOME/bin:$HOME/bin/grails-2.1.0/bin:/opt/vagrant/bin:$PATH
+
+export GRAILS_HOME=$HOME/bin/grails-2.1.0
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
 alias zr="source ~/.zshrc"
 
