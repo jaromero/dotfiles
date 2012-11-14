@@ -41,6 +41,8 @@ then
     export TERM='xterm-256color'
 fi
 
+eval $(dircolors -b $HOME/.dircolors)
+
 PATH=$HOME/.local/bin:$HOME/bin:$HOME/bin/grails-2.1.0/bin:/opt/vagrant/bin:$PATH
 
 export GRAILS_HOME=$HOME/bin/grails-2.1.0
