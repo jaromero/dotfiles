@@ -52,7 +52,9 @@ alias zr="source ~/.zshrc"
 
 alias glt="git log --graph --pretty=format:'%Cred%h$Creset %C(cyan)%an%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
-alias open="xdg-open"
+# Quash output
+alias open="xdg-open > /dev/null 2>&1"
+alias gvim="gvim > /dev/null 2>&1"
 
 # Easy copy/paste from XClipboard
 alias cbc="xclip -selection clipboard"
@@ -74,3 +76,5 @@ alias stt="st ."
 catph() {
   curl http://placekitten.com/$1/$2
 }
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
