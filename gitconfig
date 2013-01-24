@@ -16,3 +16,5 @@
 	ignore = untracked
 [core]
 	excludesfile = ~/.gitignore
+[push]
+	default = simple
