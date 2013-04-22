@@ -29,7 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler command-not-found debian dircycle encode64 fasd git git-flow npm nyan rvm)
+plugins=(safe-paste bundler command-not-found debian dircycle encode64 fasd git git-flow npm nyan rvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,7 +45,6 @@ eval $(dircolors -b $HOME/.dircolors)
 
 PATH=$HOME/.local/bin:$HOME/bin:$HOME/bin/grails-2.1.0/bin:/opt/vagrant/bin:$PATH
 
-export GRAILS_HOME=$HOME/bin/grails-2.1.0
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
 alias zr="source ~/.zshrc"
