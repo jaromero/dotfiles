@@ -25,3 +25,6 @@ __MACOSX
 .svn
 .CVS
 .hg
+
+# Chrome likes to drop this file at random because of a bug
+libpeerconnection.log
