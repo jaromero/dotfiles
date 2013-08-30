@@ -3,7 +3,7 @@
 # for examples
 
 # Mothereffing Infinality
-. "$HOME/.infinality"
+. ~/.infinality
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -109,4 +109,9 @@ fi
 #PATH=$PATH:/opt/wine1.5-amd64/bin
 #PATH=$PATH:/opt/wine1.5-i386/bin
 
+# RVM and NVM stuff (ruby and node.js)
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/Development/nvm/nvm.sh" ]] && source "$HOME/Development/nvm/nvm.sh"
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+

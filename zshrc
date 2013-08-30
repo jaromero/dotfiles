@@ -29,7 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(safe-paste bundler command-not-found debian dircycle encode64 fasd git git-flow npm nyan rvm)
+plugins=(bower bundler coffee colorize command-not-found debian encode64 extract fasd git git-flow lol node npm rvm safe-paste themes)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,10 +43,7 @@ fi
 
 eval $(dircolors -b $HOME/.dircolors)
 
-PATH=$HOME/.local/bin:$HOME/bin:$HOME/bin/grails-2.1.0/bin:/opt/vagrant/bin:$PATH
-
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-
+# Custom aliases
 alias zr="source ~/.zshrc"
 
 alias glt="git log --graph --pretty=format:'%Cred%h$Creset %C(cyan)%an%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
@@ -76,4 +73,19 @@ catph() {
   curl http://placekitten.com/$1/$2
 }
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# curl headers only
+headers() {
+  curl -s -D - $1 -o /dev/null
+}
+
+# RVM and NVM stuff (ruby and node.js)
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/Development/nvm/nvm.sh" ]] && source "$HOME/Development/nvm/nvm.sh"
+
+# Java and Grails
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export GRAILS_HOME=$HOME/bin/grails-2.2.3
+
+# Updated path
+PATH=$HOME/.local/bin:$HOME/bin:$GRAILS_HOME/bin:/opt/vagrant/bin:$PATH
+
