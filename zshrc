@@ -29,17 +29,13 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bower bundler coffee colorize command-not-found debian encode64 extract fasd git git-flow lol node npm rvm safe-paste themes)
+plugins=(bower coffee colorize command-not-found debian encode64 extract fasd git git-flow lol node npm rvm safe-paste themes)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
 # My stuff
-if [[ -f /lib/terminfo/x/xterm-256color ]];
-then
-    export TERM='xterm-256color'
-fi
 
 eval $(dircolors -b $HOME/.dircolors)
 
