@@ -56,6 +56,15 @@ alias cbp="xclip -o -selection clipboard"
 alias st="sublime"
 alias stt="st ."
 
+feh-gal() {
+  feh -qSmtime -. --reverse
+}
+
+# Total size of subdirectories
+sds() {
+  du -h -d$1 .
+}
+
 # Download all images from a 4chan thread
 4chimg() {
   wget -O - $1 |
@@ -83,5 +92,6 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 export GRAILS_HOME=$HOME/bin/grails-2.2.3
 
 # Updated path
-PATH=$HOME/.local/bin:$HOME/bin:$GRAILS_HOME/bin:/opt/vagrant/bin:$PATH
+PATH=$HOME/.local/games:$HOME/.local/bin:$HOME/bin:$GRAILS_HOME/bin:/opt/vagrant/bin:$PATH
 
+# vim: set et ts=2 sw=2:
