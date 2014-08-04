@@ -18,3 +18,5 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = simple
+[cola]
+	fontdiff = Meslo LG S,9,-1,5,50,0,0,0,0,0
