@@ -5,6 +5,12 @@ Thumbs.db
 # OS X likes to crap this thing out into every zip file
 __MACOSX
 
+# Dolphin (KDE) files
+.directory
+
+# gThumb files
+.comments
+
 # Vim temporary files
 *.swp
 *.swo
