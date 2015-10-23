@@ -20,3 +20,7 @@
 	default = simple
 [cola]
 	fontdiff = Meslo LG S,9,-1,5,50,0,0,0,0,0
+[merge]
+	tool = meld
+[credential]
+	helper = /usr/lib/git-core/git-credential-gnome-keyring
