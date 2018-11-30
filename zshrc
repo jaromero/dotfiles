@@ -1,6 +1,10 @@
 fpath=( "$HOME/.zfunctions" $fpath )
 DEFAULT_USER=nsdragon
 
+# Updated path
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/.local/games:$HOME/.local/bin:$HOME/bin:$PATH
+
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -8,7 +12,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mh"
+ZSH_THEME="node-fonts"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -35,7 +39,7 @@ bgnotify_threshold=10
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(archlinux atom bower catimg coffee colored-man colorize command-not-found encode64 extract fasd git git-flow jsontools node npm rvm safe-paste zsh-completions zsh-syntax-highlighting)
+plugins=(archlinux atom bower catimg coffee colored-man-pages colorize command-not-found encode64 extract fasd git git-flow jsontools node npm rvm safe-paste systemd zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,8 +52,8 @@ eval $(dircolors -b $HOME/.dircolors)
 # Completions
 autoload -U compinit && compinit
 
-# Disable deb's ag alias to allow silver searcher
-#unalias ag
+# Prevent duplicate history lines
+setopt HIST_IGNORE_DUPS
 
 # Custom aliases
 alias zr="source ~/.zshrc"
@@ -85,9 +89,9 @@ sds() {
   xargs wget
 }
 
-# Obtain placeholder from placekitten.com
-catph() {
-  curl http://placekitten.com/$1/$2
+# Obtain placeholder from placingbad.com
+placingbad() {
+  curl http://placingbad.com/$1/$2
 }
 
 # curl headers only
@@ -103,22 +107,20 @@ auradd() {
   cd ~/aur && git clone https://aur.archlinux.org/$1.git && cd $1
 }
 
-# rvm and nvm stuff
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
+# nvm stuff
 export NVM_SYMLINK_CURRENT=true
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
 # Java and Grails
 # export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
+# Android SDK
+export ANDROID_HOME=$HOME/Android/Sdk
+
 # Linuxbrew
 # export PATH="$HOME/.linuxbrew/bin:$PATH"
 # export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 # export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-
-# Updated path
-export PATH=$HOME/.local/games:$HOME/.local/bin:$HOME/bin:$PATH
 
 # vim: set et ts=2 sw=2:
 ###-begin-npm-completion-###
@@ -174,3 +176,14 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
+
+###-tns-completion-start-###
+if [ -f /home/nsdragon/.tnsrc ]; then 
+    source /home/nsdragon/.tnsrc 
+fi
+###-tns-completion-end-###
+
+# Hopefully fix systemd/dbus crap
+dbus-update-activation-environment --systemd --all
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

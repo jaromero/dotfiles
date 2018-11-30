@@ -16,6 +16,9 @@ __MACOSX
 *.swo
 *~
 
+# MarcWeber/vim-addon-local-vimrc
+.vimlocal
+
 # Other temporary files
 *.bak
 
@@ -31,6 +34,9 @@ __MACOSX
 .svn
 .CVS
 .hg
+
+# Tern
+.tern-port
 
 # Chrome likes to drop this file at random because of a bug
 libpeerconnection.log

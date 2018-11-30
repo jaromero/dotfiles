@@ -1,26 +1,37 @@
 [user]
-	name = Antonio Romero
-	email = nsdragon@gmail.com
+  name = Antonio Romero
+  email = nsdragon@gmail.com
+  signingkey = EEB9FC1D
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	unstage = reset HEAD --
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  unstage = reset HEAD --
+  graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
 [submodule "*"]
-	ignore = untracked
+  ignore = untracked
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
+  editor = nvim
 [push]
-	default = simple
+  default = simple
 [cola]
-	fontdiff = Meslo LG S,9,-1,5,50,0,0,0,0,0
+  fontdiff = Meslo LG S,9,-1,5,50,0,0,0,0,0
 [merge]
-	tool = meld
+  tool = meld
 [credential]
-	helper = /usr/lib/git-core/git-credential-gnome-keyring
+  helper = /usr/lib/git-core/git-credential-gnome-keyring
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
+[interactive]
+  diffFilter = diff-highlight
+[commit]
+  gpgSign = true
